@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Preview Slider Demo</title>
+
+    <!-- Linking the style -->
+    <link rel="stylesheet" href="css/picture-preview-slider.css" />
+
+    <!-- Linking the js -->
+    <script src="js/picture-preview-slider.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="preview-demo"></div>
+    <div id="preview-demo2"></div>
+</body>
+
+<script>
+    const images = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg", "img/6.jpg"];
+    const imagesAlts = ["The Woods", "Cinque Terre", "Mountains and fjords", "Northern Lights", "Nature and sunrise", "Snowy Mountains"];
+    const captions = ["The Woods", "Cinque Terre", "Mountains and fjords", "Northern Lights", "Nature and sunrise", "Snowy Mountains"];
+    const container = document.querySelector("#preview-demo");
+
+    // Preview With counts and without captions and alts.
+    const slider = new PicturePreviewSlider(container, images);
+
+    const container2 = document.querySelector("#preview-demo2");
+    // Preview with alts and captions and without counts.
+    const slider2 = new PicturePreviewSlider(container, images, false, imagesAlts, captions);
+</script>
+
+</html>
