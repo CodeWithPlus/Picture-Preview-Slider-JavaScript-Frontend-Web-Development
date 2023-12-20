@@ -173,7 +173,7 @@ class PicturePreviewSlider {
     }
 
     ChangeSlide(index) {
-        this.sliderIndex = index; l
+        this.sliderIndex = index;
         this.ShowSlide();
     }
 }
