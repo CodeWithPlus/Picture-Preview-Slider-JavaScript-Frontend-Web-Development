@@ -109,17 +109,20 @@ class PicturePreviewSlider {
         container.appendChild(selectorRow);
 
         window.addEventListener("resize", () => {
-            const height = this.previewSlides[this.sliderIndex].getBoundingClientRect().height;
-            this.nextButton.style.top = height / 2 + "px";
-            this.previousButton.style.top = height / 2 + "px";
+            const height = this.previewSlides[this.sliderIndex].getBoundingClientRect().top + window.scrollY + (this.previewSlides[this.sliderIndex].getBoundingClientRect().height / 2);
+            this.nextButton.style.top = height + "px";
+            this.previousButton.style.top = height + "px";
+            this.nextButton.style.left = this.previewSlides[this.sliderIndex].getBoundingClientRect().width + "px";
+
         });
 
         this.ShowSlide(this.sliderIndex);
 
         setTimeout(() => {
-            const heightTerm = this.previewSlides[this.sliderIndex].getBoundingClientRect().height;
-            this.previousButton.style.top = heightTerm / 2 + "px";
-            this.nextButton.style.top = heightTerm / 2 + "px";
+            const heightTerm = this.previewSlides[this.sliderIndex].getBoundingClientRect().top + window.scrollY + (this.previewSlides[this.sliderIndex].getBoundingClientRect().height / 2);
+            this.previousButton.style.top = heightTerm + "px";
+            this.nextButton.style.top = heightTerm + "px";
+            this.nextButton.style.left = (this.previewSlides[this.sliderIndex].getBoundingClientRect().width - this.nextButton.getBoundingClientRect().width) + "px";
         }, 500);
     }
 
