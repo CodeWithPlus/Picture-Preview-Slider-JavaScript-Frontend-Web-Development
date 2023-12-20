@@ -141,4 +141,35 @@ class PicturePreviewSlider {
             this.previewCaption.innerHTML = this.previewCaptions[this.sliderIndex];
         }
     }
+
+    GetActiveSlideElement() {
+        return this.previewSlides[this.sliderIndex];
+    }
+
+    NextSlide() {
+        if (this.sliderIndex === (this.totalCount - 1)) {
+            this.sliderIndex = 0;
+        }
+        else {
+            this.sliderIndex++;
+        }
+
+        this.ShowSlide();
+    }
+
+    PreviousSlide() {
+        if (this.sliderIndex === 0) {
+            this.sliderIndex = this.totalCount - 1;
+        }
+        else {
+            this.sliderIndex--;
+        }
+
+        this.ShowSlide();
+    }
+
+    ChangeSlide(index) {
+        this.sliderIndex = index;
+        this.ShowSlide();
+    }
 }

@@ -36,6 +36,22 @@
     const container2 = document.querySelector("#preview-demo2");
     // Preview with alts and captions and without counts.
     const slider2 = new PicturePreviewSlider(container, images, false, imagesAlts, captions);
+
+    // Selecting 3rd element.
+    slider.ChangeSlide(3);
+
+    // For getting the current animated element.
+    const currentSlide = slider2.GetActiveSlideElement();
+
+    // For showing the slides as changing next.
+    setInterval(() => {
+        slider.NextSlide();
+    }, 2000);
+
+    // For showing the slides as changing previous.
+    setInterval(() => {
+        slider2.PreviousSlide();
+    }, 2000);
 </script>
 
 </html>
