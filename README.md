@@ -1,11 +1,12 @@
-# TypeWriter-JavaScript-Frontend-Web-Development
+# Picture-Preview-Slider-JavaScript-Frontend-Web-Development
 
-## Preview: https://codewithplus.github.io/TypeWriter-JavaScript-Frontend-Web-Development/
+## Preview: https://codewithplus.github.io/Picture-Preview-Slider-JavaScript-Frontend-Web-Development/
 
-This is the JavaScript class which help to animate the typewriter text. It provide ease to animate multiple text at the same time.
+This is the JavaScript class which help to show pictures previews with picture to picture animations.
 
 ## Download:
-[Download the TypeWriter.js](https://github.com/CodeWithPlus/TypeWriter-JavaScript-Frontend-Web-Development/blob/886dfa2b8690e99fd11a0b81f21fe378396cc790/typewriter.js)
+[Download the picture-preview-slider.js](https://github.com/CodeWithPlus/TypeWriter-JavaScript-Frontend-Web-Development/blob/886dfa2b8690e99fd11a0b81f21fe378396cc790/typewriter.js)
+[Download the picture-preview-slider.css](https://github.com/CodeWithPlus/TypeWriter-JavaScript-Frontend-Web-Development/blob/886dfa2b8690e99fd11a0b81f21fe378396cc790/typewriter.js)
 
 
 ## Usage:
