@@ -146,6 +146,10 @@ class PicturePreviewSlider {
         return this.previewSlides[this.sliderIndex];
     }
 
+    GetCurrentSlideIndex() {
+        return this.sliderIndex;
+    }
+
     NextSlide() {
         if (this.sliderIndex === (this.totalCount - 1)) {
             this.sliderIndex = 0;
@@ -169,7 +173,7 @@ class PicturePreviewSlider {
     }
 
     ChangeSlide(index) {
-        this.sliderIndex = index;
+        this.sliderIndex = index; l
         this.ShowSlide();
     }
 }

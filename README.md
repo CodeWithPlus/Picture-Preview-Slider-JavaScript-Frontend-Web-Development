@@ -5,49 +5,81 @@
 This is the JavaScript class which help to show pictures previews with picture to picture animations.
 
 ## Download:
-[Download the picture-preview-slider.js](https://github.com/CodeWithPlus/TypeWriter-JavaScript-Frontend-Web-Development/blob/886dfa2b8690e99fd11a0b81f21fe378396cc790/typewriter.js)
-[Download the picture-preview-slider.css](https://github.com/CodeWithPlus/TypeWriter-JavaScript-Frontend-Web-Development/blob/886dfa2b8690e99fd11a0b81f21fe378396cc790/typewriter.js)
+JavaScript: [Download the picture-preview-slider.js](https://github.com/CodeWithPlus/Picture-Preview-Slider-JavaScript-Frontend-Web-Development/blob/main/js/picture-preview-slider.js)
+CSS: [Download the picture-preview-slider.css](https://github.com/CodeWithPlus/Picture-Preview-Slider-JavaScript-Frontend-Web-Development/blob/main/css/picture-preview-slider.css)
 
 
 ## Usage:
 
 ### Caution:
-before using use the script tag to load the typewriter.js to your document.
+before using use the script tag to load the picture-preview-slider.js to your document.
 ```
 <script src="typewriter.js"></script>
 ```
-
-### Declaring the text and blinker for animation:
+and use the link tag to link the css picture-preview-slider.css.
 ```
-<h1>Welcome to <span id="element">CodeWithPlus</span><span aria-hidden="true" id="blinker"></span></h1>
-```
-
-### To animate one text:
-```
-let typeWriter = new TypeWriter("element", "blinker", "CodeWithPlus");
-typeWriter.StartAnimation();
+<link rel="stylesheet" href="picture-preview-slider.css" />
 ```
 
-## To animate multiple texts:
+### Declaring the container for the slider:
 ```
-let typeWriter = new TypeWriter("element", "blinker", ["C Programming", "C++ Programming", "Python", "Java"]);
-typeWriter.StartAnimation();
-```
-
-## To change how much times the blinker will show and hide:
-```
-let typeWriter = new TypeWriter("element", "blinker", ["C Programming", "C++ Programming", "Python", "Java"], 5);
-typeWriter.StartAnimation();    
+<div id="preview-demo"></div>
 ```
 
-## To hide the blinker from the one text after writing done:
+### Defining objects for the class:
 ```
-let typeWriter = new TypeWriter("element", "blinker", "CodeWithPlus", 0);
-typeWriter.StartAnimation();
+// Defining the links, alts and captions for the class.
+const images = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg", "img/6.jpg"];
+const imagesAlts = ["The Woods", "Cinque Terre", "Mountains and fjords", "Northern Lights", "Nature and sunrise", "Snowy Mountains"];
+const captions = ["The Woods", "Cinque Terre", "Mountains and fjords", "Northern Lights", "Nature and sunrise", "Snowy Mountains"];
+
+// Selecting the container.
+const container = document.querySelector("#preview-demo");
+
 ```
 
-## To change the duration of text to write and the duration of hiding and showing of blinker:
+### Arguments Method 1:
 ```
-let typeWriter = new TypeWriter("element", "blinker", ["C Programming", "C++ Programming", "Python", "Java"], 5, 500, 100);
-typeWriter.StartAnimation();  
+// Preview With counts and without captions and alts.
+const slider = new PicturePreviewSlider(container, images);
+```
+
+### Arguments Method 2:
+```
+// Preview with alts and captions and without counts.
+const slider2 = new PicturePreviewSlider(container, images, false, imagesAlts, captions);
+```
+
+### Selecting Custom Index:
+```
+// Selecting 3rd element.
+slider.ChangeSlide(3);
+```
+
+### Getting the Current Element:
+```
+// For getting the current animated element.
+const currentSlide = slider.GetActiveSlideElement();
+```
+
+### Getting the Current Index:
+```
+// For getting the current slider index.
+const currentIndex = slider.GetCurrentSlideIndex();
+```
+
+### Showing Slides Changing Next:
+```
+// For showing the slides as changing next.
+setInterval(() => {
+    slider.NextSlide();
+}, 2000);
+```
+
+### Showing Slides Changing Previous:
+```
+// For showing the slides as changing previous.
+setInterval(() => {
+    slider.PreviousSlide();
+}, 2000);
 ```
