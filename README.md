@@ -48,6 +48,8 @@ const slider = new PicturePreviewSlider(container, images);
 ```
 // Preview with alts and captions and without counts.
 const slider2 = new PicturePreviewSlider(container, images, false, imagesAlts, captions);
+
+// The 3rd argument disable the default numbering of the slides.
 ```
 
 ### Selecting Custom Index:
