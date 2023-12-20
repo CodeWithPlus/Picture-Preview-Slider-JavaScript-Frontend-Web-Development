@@ -112,8 +112,7 @@ class PicturePreviewSlider {
             const height = this.previewSlides[this.sliderIndex].getBoundingClientRect().top + window.scrollY + (this.previewSlides[this.sliderIndex].getBoundingClientRect().height / 2);
             this.nextButton.style.top = height + "px";
             this.previousButton.style.top = height + "px";
-            this.nextButton.style.left = this.previewSlides[this.sliderIndex].getBoundingClientRect().width + "px";
-
+            this.nextButton.style.left = ((this.previewSlides[this.sliderIndex].getBoundingClientRect().width + this.previewSlides[this.sliderIndex].getBoundingClientRect().left + window.scrollX) - this.nextButton.getBoundingClientRect().width) + "px";
         });
 
         this.ShowSlide(this.sliderIndex);
@@ -122,7 +121,7 @@ class PicturePreviewSlider {
             const heightTerm = this.previewSlides[this.sliderIndex].getBoundingClientRect().top + window.scrollY + (this.previewSlides[this.sliderIndex].getBoundingClientRect().height / 2);
             this.previousButton.style.top = heightTerm + "px";
             this.nextButton.style.top = heightTerm + "px";
-            this.nextButton.style.left = (this.previewSlides[this.sliderIndex].getBoundingClientRect().width - this.nextButton.getBoundingClientRect().width) + "px";
+            this.nextButton.style.left = ((this.previewSlides[this.sliderIndex].getBoundingClientRect().width + this.previewSlides[this.sliderIndex].getBoundingClientRect().left + window.scrollX) - this.nextButton.getBoundingClientRect().width) + "px";
         }, 500);
     }
 
